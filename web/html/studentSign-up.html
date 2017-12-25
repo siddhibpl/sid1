@@ -1,0 +1,261 @@
+<script type="text/javascript" src="../js/studentSign-up.js"></script>
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class='bodyloading'>
+  <div class="boxloading"></div>
+</div> -->
+<!-- student sign up form -->
+<form class="container no-padding" id="studentForm" method="post" novalidate="">
+  <div id="formStudent" class="container containerCss containerCssForm border hide">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle  border">Candidate Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentName" name="studentName" placeholder="Your Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Father's Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentFather" name="studentFather" placeholder="Father Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Mother's Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentMother" name="studentMother" placeholder="Mother Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Email<i class="red"> *</i></label>
+            <input type="email" class="form-control" id="studentEmail" name="studentEmail" placeholder="Your Email">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Date of Birth<i class="red"> *</i></label>
+            <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" />
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">Sex<i class="red"> *</i></label>
+            <div class="radioSex">
+              <input type="radio" id="sex" name="sex" value="Male" />Male
+              <input type="radio" id="sex" name="sex" value="Female" />Female
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">Candidate Address
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Address<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentAddress" name="studentAddress" placeholder="Address">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">City<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentCity" name="studentCity" placeholder="City">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">State<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentState" name="studentState" placeholder="State">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Pincode<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentPin" name="studentPin" placeholder="Pin Number">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">Mobile<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentMobile" name="studentMobile" placeholder="Mobile Number">
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">Education Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Name of College<i class="red"> *</i></label>
+            <!-- <input type="text" class="form-control capitalize" id="studentCollege" name="studentCollege" placeholder="Government Industrial Training Institute" value=""> -->
+            <select id="studentCollege" name="studentCollege" form="studentForm" class="form-control">
+            </select>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Trade Name<i class="red"> *</i></label>
+            <select id="trade" name="trade" form="studentForm" class="form-control">
+                <!-- <option value="">select Trade</option>
+                <option value="Carpenter">Carpenter</option>
+                <option value="Fitter">Fitter</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Welder">Welder</option>
+                <option value="Painter">Painter</option>
+                <option value="Elecrician">Elecrician</option> -->
+              </select>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Passing Year<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentPassY" name="studentPassY" placeholder="yyyy" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Percentage of Marks<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentPer" name="studentPer" placeholder="Percentage" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">High School Percentage<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="studentHSPer" name="studentHSPer" placeholder="Percentage" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Willing to job<i class="red"> *</i></label>
+            <div class="radioSex">
+              <input type="radio" name="jobs" value="Yes" />Yes
+              <input type="radio" name="jobs" value="No" />No
+              <span class="showExperienceCheckbox hide">
+              <input type="checkbox" name="checkedEx" id="checkedEx" class="checkedEx" value="checked">Have Experience
+            </span>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding showExperienceDiv hide">
+            <label for="validation1">Last Company Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="studentExpCom" name="studentExpCom" placeholder="Name of Company" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding showExperienceDiv hide">
+            <label for="validation1">Experience in Year<i class="red"> *</i></label>
+            <!-- <input type="text" class="form-control" id="studentExpYear" name="studentExpYear" placeholder="Total Experience" value=""> -->
+            <select id="studentExpYear" name="studentExpYear" form="studentForm" class="form-control">
+                <!-- <option value="">select Total Year of Experience</option>
+                <option value="Below 1 Year">Below 1 Year</option>
+                <option value="1 Year">1 Year</option>
+                <option value="Below 2 Year">Below 2 Year</option>
+                <option value="2 Year">2 Year</option>
+                <option value="3 Year">3 Year</option>
+                <option value="More then 3 Year">More then 3 Year</option> -->
+              </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final Fee and form Submit div -->
+  <div class="container containerCss border">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle border">
+        <div class="row no-margin headerDiv2 padding5">
+          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding registration">
+            <div class="registrationDiv hide"></div>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding registration firstRegistration">
+            <button type="submit" class="btn btn-primary btn-sm firstSubmitButtonStudent" name="signup" value="Sign up">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm submitButton finalSubmitButtonStudent hide" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  $.validator.setDefaults({
+    submitHandler: function() {
+      myFunction();
+    }
+  });
+
+  function myFunction() {
+    $('.registrationDiv').html("<span class='registrationSpan'>For Student Registration amount is 100 Rupees. Please check for fee submission.</span> <input id='checkBoxFinal' type='checkbox'>");
+    $('.registrationDiv').removeClass('hide');
+    $('.firstSubmitButtonStudent').addClass('hide');
+    $('.finalSubmitButtonStudent').removeClass('hide');
+    var studentName = $('#studentName').val();
+    var studentFather = $('#studentFather').val();
+    var studentMother = $('#studentMother').val();
+    var studentEmail = $('#studentEmail').val();
+    var date = $('#date').val();
+    var studentAddress = $('#studentAddress').val();
+    var studentCity = $('#studentCity').val();
+    var studentState = $('#studentState').val();
+    var studentPin = $('#studentPin').val();
+    var studentMobile = $('#studentMobile').val();
+    var studentCollege = $('#studentCollege').val();
+    var trade = $('#trade').val();
+    var studentPassY = $('#studentPassY').val();
+    var studentPer = $('#studentPer').val();
+    var studentHSPer = $('#studentHSPer').val();
+    var studentExpCom = $('#studentExpCom').val();
+    var studentExpYear = $('#studentExpYear').val();
+    var Sex = $('input[name=sex]:checked').val();
+    var Job = $('input[name=jobs]:checked').val();
+    var exCheck = $('input[name=checkedEx]:checked').val();
+    if (exCheck == "checked") {
+      exCheck = "Experience";
+      studentExpCom = capitalizeFirstLetterEachWordSplitBySpace(studentExpCom);
+    } else {
+      exCheck = "Fresher";
+      studentExpCom = "NA";
+      studentExpYear = "NA";
+    }
+    newStudent = {
+      "Name": capitalizeFirstLetterEachWordSplitBySpace(studentName),
+      "Father": capitalizeFirstLetterEachWordSplitBySpace(studentFather),
+      "Mother": capitalizeFirstLetterEachWordSplitBySpace(studentMother),
+      "Email": studentEmail,
+      "Dob": date,
+      "Sex": Sex,
+      "Address": studentAddress,
+      "City": capitalize(studentCity),
+      "State": capitalizeFirstLetterEachWordSplitBySpace(studentState),
+      "Pincode": studentPin,
+      "Mobile": studentMobile,
+      "College": capitalizeFirstLetterEachWordSplitBySpace(studentCollege),
+      "Trade": trade,
+      "POY": studentPassY,
+      "Per": studentPer,
+      "HSPer": studentHSPer,
+      "Job": Job,
+      "Experience": exCheck,
+      "LastComp": studentExpCom,
+      "ExpYear": studentExpYear,
+    };
+    sessionsetItem("newStudent", newStudent);
+  }
+  $(".finalSubmitButtonStudent").on("click", function() {
+    if ($('#checkBoxFinal').prop('checked') == true) {
+      var newStudent = sessiongetItem("newStudent");
+      console.log(newStudent);
+      if ((secret == null) || (secret == "") || (secret == undefined)) {} else {
+        if (secret.Key == "Edit") {
+          newStudent.Key = "Edit";
+        }
+      }
+      console.log(newStudent);
+      $.when(Posthandler("/route/newStudent", newStudent, true)).done(function(res) {
+        if (res.resCode == 'OK') {
+          console.log(res);
+          sessionremoveItem("newStudent");
+          sessionremoveItem("login");
+          var x = sessionremoveItem("secret");
+          console.log(x);
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "success"
+            },
+            function() {
+              swal.close();
+              window.location.replace("../login.html");
+            });
+        } else {
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "error"
+            },
+            function() {
+              swal.close();
+              $('#studentMobile').focus().select();
+              $('.firstSubmitButtonStudent').removeClass('hide');
+              $('.finalSubmitButtonStudent').addClass('hide');
+            });
+        }
+      });
+    } else {
+      swal({
+          title: "Error!",
+          text: "fail to connect",
+          type: "error"
+        },
+        function() {
+          swal.close();
+          window.location.href = '../login.html';
+        });
+    }
+  });
+</script>

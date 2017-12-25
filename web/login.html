@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="x-ua-compatible" content="IE=5">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/itiLogo.jpg">
+  <title>ITI Jobs Portal</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="static/css/tether.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/sweetalert.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/unite-gallery.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/ug-theme-default.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/custom_Media.css">
+  <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+  <div class='bodyloading'>
+    <div class="boxloading"></div>
+  </div>
+  <div id="containerDiv" class="hide">
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top myNavBgColor myNavbar">
+      <a class="navbar-brand" href="login.html"><img src="img/itiLogo.jpg"> ITI JOBS</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" name=1>
+            <a class="nav-link aboutIti" data-toggle="modal" data-target="#exampleModalLong">About ITI Jobs</a>
+          </li>
+          <li class="nav-item" name=1>
+            <a class="nav-link contactUs">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="social pullRightCustom">
+          <li class="facebook"><a href="#" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li class="twitter"><a href="#" data-toggle="tooltip" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+          <li class="google+"><a href="#" data-toggle="tooltip" title="" data-original-title="Google"><i class="fa fa-google-plus"></i></a></li>
+          <li class="linkedin"><a href="#" data-toggle="tooltip" title="" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+          <li class="instagram"><a href="#" data-toggle="tooltip" title="" data-original-title="Instagram"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- container -->
+    <div class="container no-padding marginTop60">
+      <div class="row no-margin no-padding">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 iti-Padding5">
+          <!-- Carouse for home -->
+          <div class="iti-DivBod iti-Padding10">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="carouselImage" src="img/job/jobPortal1.jpg" alt="image1" width="100%" height="280px">
+                  <div class="carousel-caption">
+                    <div class="iti-title">
+                      <div id="iti-ftitle" class="iti-ftitle"></div>
+                    </div>
+                    <div id="iti-fdoc" class="iti-fdoc"></div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="carouselImage" src="img/job/jobPortal2.jpg" alt="image2" width="100%" height="280px">
+                  <div class="carousel-caption">
+                    <div class="iti-title">
+                      <div id="iti-ftitle" class="iti-ftitle"></div>
+                    </div>
+                    <div id="iti-fdoc" class="iti-fdoc"></div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="carouselImage" src="img/job/jobPortal3.jpg" alt="image3" width="100%" height="280px">
+                  <div class="carousel-caption">
+                    <div class="iti-title">
+                      <div id="iti-ftitle" class="iti-ftitle"></div>
+                    </div>
+                    <div id="iti-fdoc" class="iti-fdoc"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 iti-Padding5">
+          <div class="iti-DivBod iti-Padding10">
+            <div class="iti-title">Login to your Account</div>
+            <form id="signupForm" method="post" class="form-horizontal" action="">
+              <div class="form-group form-groupcss has-feedback">
+                <input type="text" class="form-control" id="mobi" name="mobi" placeholder="Mobile Number" />
+              </div>
+              <div class="form-group form-groupcss has-feedback">
+                <span class="fa fa-eye img" onmousedown="mDown()" onmouseup="mUp()" aria-hidden="true" name="password"></span>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+              </div>
+              <div class="row no-margin no-padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding submitbuttonCss">
+                  <button type="submit" class="btn btn-primary" name="signup" formID="signupForm" value="Sign up">Submit</button>
+                  <a class="pull-right" style="margin-top:5px"  href="html/forget-emailPass.html">Forgot Password?</a>
+                </div>
+              </div>
+            </form>
+            <br><br> New to ItiJobs.com?<a href="html/sign-up.html">Sign up For New Registration</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="container marketing"> -->
+      <!-- four columns of text below the carousel -->
+      <!-- <div class="iti-title">Our Portal Reach</div> -->
+      <div class="row margin-top no-padding">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4 iti-Padding5">
+          <div class="iti-DivBod iti-Padding10All iti-DivCen">
+            <img class="img-rounded" src="img/company.png" alt="Total Company image" width="65" height="65">
+            <div class="total-css total-company">0</div>
+            <div class="iti-stitle">Total Companies</div>
+          </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4 iti-Padding5">
+          <div class="iti-DivBod iti-Padding10All iti-DivCen">
+            <img class="img-rounded" src="img/itiicon.png" alt="Total ITI image" width="65" height="65">
+            <div class="total-css total-iti">0</div>
+            <div class="iti-stitle">Total ITI Listed</div>
+          </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4 iti-Padding5">
+          <div class="iti-DivBod iti-Padding10All iti-DivCen">
+            <img class="img-rounded" src="img/student.png" alt="Total Student image" width="65" height="65">
+            <div class="total-css total-student">0</div>
+            <div class="iti-stitle">Total Students</div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      <!-- <div>
+  <div id="gallery" style="display:none;">
+
+  <img alt="image 1 Title" src="thumbs/image1.jpg"
+    data-image="img/ambujImage.jpg"
+    data-description="Image 1 Description">
+
+  <img alt="Image 2 Title" src="thumbs/image2.jpg"
+    data-image="img/ITIJOBSICON.jpg"
+    data-description="Image 2 Description">
+
+</div>
+</div> -->
+      <!-- chet with us -->
+      <!-- <div class="container no-padding marginBottom"> -->
+      <div class="row margin-top no-padding">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 iti-Padding5" id="contact-form">
+          <div class="iti-DivBod iti-Padding10All">
+            <div class="iti-title">Contact Us</div>
+            <div class="contactUsPara">Feel free to talk to our representative at any time by using below instant messaging programs.<br>
+            Please be patient while waiting for response. (24/7 Support!)<br>
+            All * field is mandatory.</div>
+            <form method="post" class="reply" id="contact">
+              <fieldset>
+                <div class="row no-margin no-padding">
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6 form-group form-groupcssContact">
+                    <input class="form-control capitalize" id="contactName" name="contactName" placeholder="* Name" type="text">
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6 form-group form-groupcssContact">
+                    <input class="form-control" id="contactEmail" name="contactEmail" placeholder="* Email" type="email">
+                  </div>
+                </div>
+                <div class="row no-margin no-padding">
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6 form-group form-groupcssContact">
+                    <input class="form-control" id="contactMobile" name="contactMobile" placeholder="Mobile" type="text">
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6 form-group form-groupcssContact">
+                    <input class="form-control" id="contactSubject" name="contactSubject" placeholder="* Subject" type="text">
+                  </div>
+                </div>
+                <div class="row no-margin no-padding">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group form-groupcssContact">
+                    <textarea class="form-control" id="contactText" name="contactText" rows="3" cols="40" placeholder="* Message"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-primary submit pull-right no-margin" type="submit" formID="contact">Send</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- back-to-top -->
+  <div id="back-top" style="display: block;">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i> <a href="#top">Back to Top</a>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="img/itiLogo.jpg" alt="" class="pull-left">
+          <a class="modal-title" id="exampleModalLongTitle">
+                <a class="close modal-close l-m negetive-margin-top" data-dismiss="modal" aria-hidden="true">×</a><span class="profileClientImg hide pull-right"></span>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer class="iti-Footer">
+    <div class="footer12">All Rights Reserved, &copy; 2017 ITI JOBS</div>
+  </footer>
+  </div>
+  <!-- all external script file attached here -->
+  <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="static/js/jquery.validate.js"></script>
+  <script type="text/javascript" src="static/js/tether.min.js"></script>
+  <script type="text/javascript" src="static/js/capitalize.js"></script>
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="static/js/ug-carousel.js"></script>
+  <script type="text/javascript" src="static/js/ug-theme-default.js"></script>
+  <script type="text/javascript" src="js/storage.js"></script>
+  <script type="text/javascript" src="js/backToTopFunction.js"></script>
+  <script type="text/javascript" src="static/js/sweetalert.min.js"></script>
+  <script type="text/javascript" src="js/ajaxHandler.js"></script>
+  <script type="text/javascript" src="js/validatorAddMethod.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <!-- <script>
+     $(document).ready(function () {
+          var version = detectIE();
+
+              if(version <= 9){
+                   if(version !== false){
+                      window.location.href = "html/browserError.html";
+                  }
+              }
+              function detectIE() {
+                    var ua = window.navigator.userAgent;
+                    var msie = ua.indexOf('MSIE ');
+                    if (msie > 0) {
+                        // IE 10 or older => return version number
+                        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+                    }
+                    var trident = ua.indexOf('Trident/');
+                    if (trident > 0) {
+                        // IE 11 => return version number
+                        var rv = ua.indexOf('rv:');
+                        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+                    }
+
+                    var edge = ua.indexOf('Edge/');
+                    if (edge > 0) {
+                        // Edge (IE 12+) => return version number
+                        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+                    }
+
+                    // other browser
+                    return false;
+                }
+
+      });
+    </script> -->
+
+</body>
+
+</html>

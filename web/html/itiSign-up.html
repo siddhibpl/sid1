@@ -1,0 +1,261 @@
+<script type="text/javascript" src="../js/itiSign-up.js"></script>
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class='bodyloading'>
+  <div class="boxloading"></div>
+</div> -->
+<!-- For ITI Institute Registration -->
+<form class="container no-padding" id="itiForm" method="post" novalidate="">
+  <div id="formITI" class="container containerCss containerCssForm border hide">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle  border">ITI Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="itiName" name="itiName" placeholder="Name of ITI" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Registration Number<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiReg" name="itiReg" placeholder="ITI Registration Number" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Landline Number<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiLand" name="itiLand" placeholder="Number" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Email<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiEmail" name="itiEmail" placeholder="Official Email ID">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">Principal Mobile<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiMobile" name="itiMobile" placeholder="Number">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">ITI Type<i class="red"> *</i></label>
+            <div class="radioSex">
+              <input type="radio" name="itiType" value="Government" />Government
+              <input type="radio" name="itiType" value="Private" />Private
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">ITI Trade and Address
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Trade Name<i class="red"> *</i></label>
+            <select id="trade" name="trade" form="itiForm" class="form-control" multiple="multiple">
+                <!-- <option>select Trade</option>
+                <option value="1">Carpenter</option>
+                <option value="2">Fitter</option>
+                <option value="3">Plumber</option>
+                <option value="4">Welder</option>
+                <option value="5">Painter</option>
+                <option value="6">Elecrician</option> -->
+              </select>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Address<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiAddress" name="itiAddress" placeholder="Address">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">City<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="itiCity" name="itiCity" placeholder="City">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">District<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="itiDistrict" name="itiDistrict" placeholder="District Name">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">State<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="itiState" name="itiState" placeholder="State Name">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Pincode<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiPincode" name="itiPincode" placeholder="Area Pincode">
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">ITI TPO Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">TPO Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="itiTPOName" name="itiTPOName" placeholder="TPO Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">TPO Email<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiTPOEmail" name="itiTPOEmail" placeholder="TPO Email ID">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">TPO Mobile<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="itiTPOMobile" name="itiTPOMobile" placeholder="TPO Mobile Number">
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">Upload ITI Logo
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding">
+            <label for="validation1">Select ITI Logo<i class="red"> *</i></label>
+            <input type="file" class="form-control" id="itiLogo" name="itiLogo" accept="image/*" onchange="loadFile(event)">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding registration">
+            <div class="photLoader hide" style="position: relative;">loading......<i class="fa-li fa fa-spinner fa-spin"></i></div>
+            <div class="photPreview hide" style="position: relative;"><img id="img" src="#" alt="your image" width="100px" height="100px" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final Fee and form Submit div -->
+  <div class="container containerCss border">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle border">
+        <div class="row no-margin headerDiv2 padding5">
+          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding registration">
+            <div class="registrationDiv hide"></div>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding registration firstRegistration">
+            <button type="submit" class="btn btn-primary btn-sm firstSubmitButtonIti" name="signup" value="Sign up">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm submitButton finalSubmitButtonIti hide" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  $.validator.setDefaults({
+    submitHandler: function() {
+      myFunction();
+    }
+  });
+
+  function myFunction() {
+    $('.registrationDiv').html("<span class='registrationSpan'>For Institute Registration amount is 500 Rupees. Please check for fee submission.</span> <input id='checkBoxFinal' type='checkbox'>");
+    $('.registrationDiv').removeClass('hide');
+    $('.firstSubmitButtonIti').addClass('hide');
+    $('.finalSubmitButtonIti').removeClass('hide');
+    var itiName = $('#itiName').val();
+    var itiReg = $('#itiReg').val();
+    var itiLand = $('#itiLand').val();
+    var itiEmail = $('#itiEmail').val();
+    var itiMobile = $('#itiMobile').val();
+    var itiType = $('input[name=itiType]:checked').val();
+    var itiAddress = $('#itiAddress').val();
+    var itiCity = $('#itiCity').val();
+    var itiState = $('#itiState').val();
+    var itiPincode = $('#itiPincode').val();
+    var itiDistrict = $('#itiDistrict').val();
+    var itiTPOName = $('#itiTPOName').val();
+    var itiTPOEmail = $('#itiTPOEmail').val();
+    var itiTPOMobile = $('#itiTPOMobile').val();
+    var file = document.getElementById('itiLogo').files[0];
+    var itiLogo = $('#itiLogo').val();
+    var trade = JSON.stringify($('#trade').val());
+    newIti = {
+      "Name": capitalizeFirstLetterEachWordSplitBySpace(itiName),
+      "Registration": itiReg,
+      "Landline": itiLand,
+      "Email": itiEmail,
+      "Mobile": itiMobile,
+      "Type": itiType,
+      "Address": itiAddress,
+      "City": capitalize(itiCity),
+      "State": capitalizeFirstLetterEachWordSplitBySpace(itiState),
+      "Pincode": itiPincode,
+      "District": capitalize(itiDistrict),
+      "TPO_Name": capitalizeFirstLetterEachWordSplitBySpace(itiTPOName),
+      "TPO_Email": itiTPOEmail,
+      "TPO_Mobile": itiTPOMobile,
+      "Logo": file.name,
+      "Trade": trade
+    };
+    sessionsetItem("newIti", newIti);
+    console.log(newIti);
+  }
+  $(".finalSubmitButtonIti").on("click", function() {
+    if ($('#checkBoxFinal').prop('checked') == true) {
+      var newIti = sessiongetItem("newIti");
+      console.log(newIti);
+      if ((secret == null) || (secret == "") || (secret == undefined)) {} else {
+        if (secret.Key == "Edit") {
+          newIti.Key = "Edit";
+        }
+      }
+      console.log(newIti);
+      $.when(Posthandler("/route/newIti", newIti, true)).done(function(res) {
+        if (res.resCode == 'OK') {
+          console.log(res);
+          sessionremoveItem("login");
+          sessionremoveItem("newIti");
+          var x = sessionremoveItem("secret");
+          console.log(x);
+          uploadImage();
+        } else {
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "error"
+            },
+            function() {
+              swal.close();
+              $('#itiTPOMobile').focus().select();
+              $('.firstSubmitButtonIti').removeClass('hide');
+              $('.finalSubmitButtonIti').addClass('hide');
+            });
+        }
+      }).fail(function() {
+        swal({
+            title: "Error!",
+            text: "sorry fail to connect. please check your internet connection",
+            type: "error"
+          },
+          function() {
+            swal.close();
+            window.location.href = '../login.html';
+          });
+      });
+    } else {
+      swal("Error!", "Please Check Checkbox before final Submission!", "error");
+    }
+  });
+  var loadFile = function(event) {
+    $('.photLoader').removeClass('hide');
+    $('.photPreview').addClass('hide');
+    var output = document.getElementById('img');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    setTimeout(function() {
+      $('.photLoader').addClass('hide');
+      $('.photPreview').removeClass('hide');
+    }, 1000);
+  };
+
+  function uploadImage() {
+    var file = document.getElementById('itiLogo').files[0];
+    console.log(file);
+    var img = {
+      "avatar": file
+    };
+    console.log(img);
+    var fd = new FormData();
+    fd.append('college', $('#itiLogo')[0].files[0]);
+    console.log("fd>>>>>>>", fd);
+    $.ajax({
+      url: '/route/uploadCollegeLogo',
+      data: fd,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      success: function(data) {
+        console.log(data);
+        swal({
+            title: "OK!",
+            text: "Update Successfully",
+            type: "success"
+          },
+          function() {
+            swal.close();
+            window.location.href = '../login.html';
+          });
+      }
+    });
+  };
+</script>

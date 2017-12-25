@@ -1,0 +1,239 @@
+<script type="text/javascript" src="../js/companySign-up.js"></script>
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class='bodyloading'>
+  <div class="boxloading"></div>
+</div> -->
+<!-- For Company Registration -->
+<form class="container no-padding" id="companyForm" method="post" novalidate="">
+  <div id="formCompany" class="container containerCss containerCssForm border hide">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle  border">Employers Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="comName" name="comName" placeholder="Employers Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Registration Number<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comReg" name="comReg" placeholder="Employers Registration" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation2">Landline Number</label>
+            <input type="text" class="form-control" id="comLand" name="comLand" placeholder="Number" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Email<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comEmail" name="comEmail" placeholder="Email">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">Website</label>
+            <input type="text" class="form-control" id="comWeb" name="comWeb" placeholder="Employers Website">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Year of Incorporation<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comYear" name="comYear" placeholder="YYYY">
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="headerDiv1 backgroundColor"> -->
+      <div class="formTitle border">Employers Address
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Address<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comAddress" name="comAddress" placeholder="Address">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">City<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="comCity" name="comCity" placeholder="City">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">District<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="comDistrict" name="comDistrict" placeholder="District">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">State<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="comState" name="comState" placeholder="State">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Pincode<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comPincode" name="comPincode" placeholder="Pincode">
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="headerDiv1 backgroundColor"> -->
+      <div class="formTitle border">Employers HR Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Hr Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="comHRName" name="comHRName" placeholder="HR Name" value="">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Email<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comHREmail" name="comHREmail" placeholder="HR Email">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">Mobile<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="comHRMobile" name="comHRMobile" placeholder="HR Mobile">
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="headerDiv1 backgroundColor"> -->
+      <div class="formTitle border">Upload Employers Logo
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding">
+            <label for="validation1">Select Employers Logo<i class="red"> *</i></label>
+            <input type="file" class="form-control" id="comLogo" name="comLogo" accept="image/*" onchange="loadFile(event)">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding registration">
+            <div class="photLoader hide" style="position: relative;">loading......<i class="fa-li fa fa-spinner fa-spin"></i></div>
+            <div class="photPreview hide" style="position: relative;"><img id="img" src="#" alt="your image" width="100px" height="100px" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final Fee and form Submit div -->
+  <div class="container containerCss border">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle border">
+        <div class="row no-margin headerDiv2 padding5">
+          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding registration">
+            <div class="registrationDiv hide"></div>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding registration firstRegistration">
+            <button type="submit" class="btn btn-primary btn-sm firstSubmitButtonCompany" name="signup" value="Sign up">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm submitButton finalSubmitButtonCompany hide" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+<script>
+  $.validator.setDefaults({
+    submitHandler: function() {
+      myFunction();
+    }
+  });
+
+  function myFunction() {
+    $('.registrationDiv').html("<span class='registrationSpan'>For Company Registration amount is 1000 Rupees. Please check for fee submission.</span> <input id='checkBoxFinal' type='checkbox'>");
+    $('.registrationDiv').removeClass('hide');
+    $('.firstSubmitButtonCompany').addClass('hide');
+    $('.finalSubmitButtonCompany').removeClass('hide');
+    var comName = $('#comName').val();
+    var comReg = $('#comReg').val();
+    var comLand = $('#comLand').val();
+    var comEmail = $('#comEmail').val();
+    var comWeb = $('#comWeb').val();
+    var comYear = $('#comYear').val();
+    var comAddress = $('#comAddress').val();
+    var comCity = $('#comCity').val();
+    var comState = $('#comState').val();
+    var comPincode = $('#comPincode').val();
+    var comDistrict = $('#comDistrict').val();
+    var comHRName = $('#comHRName').val();
+    var comHREmail = $('#comHREmail').val();
+    var comHRMobile = $('#comHRMobile').val();
+    var comLogo = $('#comLogo').val();
+    var file = document.getElementById('comLogo').files[0];
+    newCompany = {
+      "Name": capitalizeFirstLetterEachWordSplitBySpace(comName),
+      "Registration": comReg,
+      "Landline": comLand,
+      "Email": comEmail,
+      "Website": comWeb,
+      "YOI": comYear,
+      "Address": comAddress,
+      "City": capitalize(comCity),
+      "State": capitalizeFirstLetterEachWordSplitBySpace(comState),
+      "Pincode": comPincode,
+      "District": capitalize(comDistrict),
+      "HR_Name": capitalizeFirstLetterEachWordSplitBySpace(comHRName),
+      "HR_Email": comHREmail,
+      "HR_Mobile": comHRMobile,
+      "Logo": file.name
+    };
+    sessionsetItem("newCompany", newCompany);
+    console.log(newCompany);
+  }
+  $(".finalSubmitButtonCompany").on("click", function() {
+    if ($('#checkBoxFinal').prop('checked') == true) {
+      var newCompany = sessiongetItem("newCompany");
+      console.log(newCompany);
+      if ((secret == null) || (secret == "") || (secret == undefined)) {} else {
+        if (secret.Key == "Edit") {
+          newCompany.Key = "Edit";
+        }
+      }
+      console.log(newCompany);
+      $.when(Posthandler("/route/newCompany", newCompany, true)).done(function(res) {
+        if (res.resCode == 'OK') {
+          console.log(res);
+          sessionremoveItem("login");
+          sessionremoveItem("newCompany");
+          var x = sessionremoveItem("secret");
+          console.log("XXXXXXXXXXXXXXXXXX>>>>>>",x);
+          uploadImage();
+        } else {
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "error"
+            },
+            function() {
+              swal.close();
+              $('#comHRMobile').focus().select();
+              $('.firstSubmitButtonCompany').removeClass('hide');
+              $('.finalSubmitButtonCompany').addClass('hide');
+            });
+        }
+      });
+    } else {
+      swal("Error!", "Please Check Checkbox before final Submission!", "error");    }
+  });
+  var loadFile = function(event) {
+    $('.photLoader').removeClass('hide');
+    $('.photPreview').addClass('hide');
+    var output = document.getElementById('img');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    setTimeout(function() {
+      $('.photLoader').addClass('hide');
+      $('.photPreview').removeClass('hide');
+    }, 1000);
+  };
+  function uploadImage(){
+    var file = document.getElementById('comLogo').files[0];
+    console.log(file);
+    var img = {
+      "avatar":file
+    };
+    console.log(img);
+    var fd = new FormData();
+    fd.append( 'company', $('#comLogo')[0].files[0] );
+    console.log("fd>>>>>>>",fd);
+    $.ajax({
+      url: '/route/uploadCompanyLogo',
+      data: fd,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      success: function(data){
+        console.log(data);
+        swal({
+            title: "OK!",
+            text: "Update Successfully",
+            type: "success"
+          },
+          function() {
+            swal.close();
+            window.location.href = '../login.html';
+          });
+      }
+    });
+  };
+</script>

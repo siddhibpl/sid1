@@ -1,0 +1,144 @@
+<script type="text/javascript" src="../js/adminSign-up.js"></script>
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class='bodyloading'>
+  <div class="boxloading"></div>
+</div> -->
+<!-- For Admin Registration -->
+
+<form class="container no-padding" id="adminForm" method="post" action="">
+  <div id="formAdmin" class="container containerCss containerCssForm border hide">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle  border">Admin Details
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation1">Name<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="adminName" placeholder="Your Name" name="adminName">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Email<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="adminEmail" name="adminEmail" placeholder="Your Email">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Mobile<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="adminMobile" name="adminMobile" placeholder="Your Mobile">
+          </div>
+        </div>
+      </div>
+      <div class="formTitle border">Admin Address
+        <div class="row no-margin headerDiv2 paddingBottom">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation3">Address<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="adminAddress" name="adminAddress" placeholder="Your Address">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation4">City<i class="red"> *</i></label>
+            <input type="text" class="form-control capitalize" id="adminCity" name="adminCity" placeholder="Your City">
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
+            <label for="validation5">Pincode<i class="red"> *</i></label>
+            <input type="text" class="form-control" id="adminPincode" name="adminPincode" placeholder="Your Pin">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final Fee and form Submit div -->
+  <div class="container containerCss border">
+    <div class="headerDiv1 backgroundColor">
+      <div class="formTitle border">
+        <div class="row no-margin headerDiv2 padding5">
+          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding registration">
+            <div class="registrationDiv hide"></div>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding registration firstRegistration">
+            <button type="submit" class="btn btn-primary btn-sm firstSubmitButtonAdmin" name="signup" value="Sign up">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm submitButton finalSubmitButtonAdmin hide" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  $.validator.setDefaults({
+    submitHandler: function() {
+      myFunction();
+    }
+  });
+
+  function myFunction() {
+    var adminName = $('#adminName').val();
+    var adminEmail = $('#adminEmail').val();
+    var adminMobile = $('#adminMobile').val();
+    var adminAddress = $('#adminAddress').val();
+    var adminCity = $('#adminCity').val();
+    var adminPincode = $('#adminPincode').val();
+    $('.registrationDiv').html("<span class='registrationSpan'>Please check for final submission.</span> <input id='checkBoxFinal' type='checkbox'>");
+    $('.registrationDiv').removeClass('hide');
+    $('.firstSubmitButtonAdmin').addClass('hide');
+    $('.finalSubmitButtonAdmin').removeClass('hide');
+    newAdmin = {
+      "Name": capitalizeFirstLetterEachWordSplitBySpace(adminName),
+      "Email": adminEmail,
+      "Mobile": adminMobile,
+      "Address": adminAddress,
+      "City": capitalize(adminCity),
+      "Pincode": adminPincode
+    };
+    sessionsetItem("newAdmin", newAdmin);
+  }
+  $(".finalSubmitButtonAdmin").on("click", function() {
+    if ($('#checkBoxFinal').prop('checked') == true) {
+      var newAdmin = sessiongetItem("newAdmin");
+      console.log(newAdmin);
+      var secret = sessiongetItem("secret");
+      console.log(secret);
+      if ((secret == null) || (secret == "") || (secret == undefined)) {} else {
+        if (secret.Key == "Edit") {
+          newAdmin.Key = "Edit";
+        }
+      }
+      console.log(newAdmin);
+      $.when(Posthandler("/route/newAdmin", newAdmin, true)).done(function(res) {
+        if (res.resCode == 'OK') {
+          console.log(res);
+          sessionremoveItem("login");
+          var x = sessionremoveItem("secret");
+          sessionremoveItem("newAdmin");
+          console.log(x);
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "success"
+            },
+            function() {
+              swal.close();
+              window.location.replace("../login.html");
+            });
+        } else {
+          swal({
+              title: res.resCode,
+              text: res.msg,
+              type: "error"
+            },
+            function() {
+              swal.close();
+              $('#adminMobile').focus().select();
+              $('.firstSubmitButtonAdmin').removeClass('hide');
+              $('.finalSubmitButtonAdmin').addClass('hide');
+            });
+        }
+      });
+    } else {
+      swal({
+          title: "Error!",
+          text: "fail to connect",
+          type: "error"
+        },
+        function() {
+          swal.close();
+          window.location.href = '../login.html';
+        });
+    }
+  });
+</script>

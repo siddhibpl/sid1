@@ -1,0 +1,177 @@
+<div class="row no-margin no-padding">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding DivCen">
+    <label>Trade Name<i class="red"> *</i></label>
+    <select id="trade" name="trade" class="form-control" required></select>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 no-padding DivCen">
+    <div class="row no-margin no-padding">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 askForExperience DivCen">
+        <label>Have Experience<i class="red"> *</i>
+      </label>
+        <div class="radioSex" style="text-align: center;">
+          <input type="radio" name="experience" value="Yes" />Yes
+          <input type="radio" name="experience" value="No" checked="checked" />No
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 showExperienceDiv hide DivCen">
+        <label>Experience in Year<i class="red"> *</i>
+      </label>
+        <select id="studentExpYear" name="studentExpYear" form="studentForm" class="form-control"></select>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding registration DivCen" id="myFunctionSubmitDiv">
+    <button class="btn btn-primary" type="submit" value="Submit" onclick="myFunctionSubmit()">Fill Details & Submit</button>
+  </div>
+</div>
+<script>
+  var login = sessiongetItem("login");
+  $('input:radio[name="experience"]').change(function() {
+    if ($(this).val() == 'Yes') {
+      $('.showExperienceDiv').removeClass('hide');
+    } else {
+      $('.showExperienceDiv').addClass('hide');
+    }
+  });
+
+  function myFunctionSubmit() {
+    $(".tablecontainerDiv").html('');
+    $('.bodyloading').removeClass('hide');
+    var trd = $('#trade').val();
+    var exp1 = $('input[name=experience]:checked').val();
+    if (exp1 === 'Yes') {
+      status = "Experience";
+      var exp2 = $('#studentExpYear').val();
+    } else {
+      status = "Fresher";
+      exp2 = "NA";
+    }
+    var obj = {
+      "Role": login.Role,
+      "Name": login.Name,
+      "Trade": trd,
+      "Experience": status,
+      "ExpYear": exp2
+    };
+    console.log(obj);
+    if (trd != null) {
+      $.when(Posthandler("/route/studentTradeWiseFilter", obj, true)).done(function(res) {
+        if (res.resCode == 'OK') {
+          getTableDiv();
+          console.log(res);
+          var arr = res.results;
+          if (login.Role != "Company") {
+            console.log(">>>>>>>>", login.Role != "Company", "  ", login.Role);
+            $.each(arr, function(i, arr) {
+              var body = "<tr>";
+              body += "<td>" + arr["Name"] + "</td>";
+              body += "<td>" + arr["Mobile"] + "</td>";
+              body += "<td>" + arr["Email"] + "</td>";
+              body += "<td>" + arr["Address"] + "</td>";
+              body += "<td>" + arr["City"] + "</td>";
+              body += "<td>" + arr["Pincode"] + "</td>";
+              body += "<td>" + arr["College"] + "</td>";
+              body += "<td class='editrow' data-toggle='modal' data-target='#exampleModalLong' title='Click Here for " + arr["Name"] + " More Details '><i class='fa fa-info-circle'  aria-hidden='true'></i> Info </td>";
+              body += "</tr>";
+              $("#totalStudentTable tbody").append(body);
+            });
+            create_DatatableTOtalStudent('#totalStudentTable');
+            // $('.dataTables_scrollHeadInner, .aboutMEeTable_header').css("width", "100%");
+            $('.modal-content').removeClass('resumeModal');
+            viewMoreFunctionForStudent(arr);
+
+          } else {
+            $.each(arr, function(i, arr) {
+              var body = "<tr>";
+              body += "<td>" + arr["Name"] + "</td>";
+              body += "<td>" + arr["Mobile"] + "</td>";
+              body += "<td>" + arr["Email"] + "</td>";
+              body += "<td>" + arr["Address"] + "</td>";
+              body += "<td>" + arr["City"] + "</td>";
+              body += "<td>" + arr["Pincode"] + "</td>";
+              body += "<td>" + arr["College"] + "</td>";
+              body += "<td class='editrow' data-toggle='modal' data-target='#exampleModalLong' title='Click Here for " + arr["Name"] + " More Details '><i class='fa fa-info-circle'  aria-hidden='true'></i> Info </td>";
+              body += "</tr>";
+              $("#totalStudentTable1 tbody").append(body);
+            });
+            // create_DatatableTOtalStudent('#totalStudentTable1');
+            create_DatatableTOtalStudentTradeWiseValidationAndPrintPdf('#totalStudentTable1');
+            $('.modal-content').addClass('resumeModal');
+            viewMoreFunctionForStudent1(arr);
+          }
+          $('.bodyloading').addClass('hide');
+          // $('.tablecontainerDiv').removeClass('hide');
+        } else {
+          console.log(res.results);
+          swal("Error!", res.msg, "error");
+          $('.bodyloading').addClass('hide');
+          $('#containerDiv').removeClass('hide');
+        }
+      }).fail(function() {
+        swal("Error!", "sorry unable to check Trade list. please check your internet connection", "error");
+      });
+    } else {
+      swal("Error!", "Please Select Any Trade Name in Trade list!", "error");
+      $('.bodyloading').addClass('hide');
+      $('#containerDiv').removeClass('hide');
+    }
+  };
+
+  function getTableDiv() {
+    if (login.Role != "Company") {
+      // alert("login.Role != Company");
+      $('.tablecontainerDiv').html(
+        "<section class='content'><div class='boxC'><table id='totalStudentTable' class='cell-border display aboutMEeTable_header'  cellspacing=0 width=100%><thead class='leaveTable_header'><tr><th>Name</th><th>Contact No</th><th>Email</th><th>Address</th><th>City</th><th>Pincode</th><th>College</th><th>More Information</th></tr></thead><tbody class='aboutMeTable_body'></tbody></table></div></section>"
+      );
+    } else {
+      // alert("login.Role == Company");
+      $('.tablecontainerDiv').html(
+        "<section class='content'><div class='boxC'><table id='totalStudentTable1' class='cell-border display aboutMEeTable_header'  cellspacing=0 width=100%><thead class='leaveTable_header'><tr><th>Name</th><th>Contact No</th><th>Email</th><th>Address</th><th>City</th><th>Pincode</th><th>College</th><th>More Information</th></tr></thead><tbody class='aboutMeTable_body'></tbody></table></div></section>"
+      );
+    }
+  }
+
+  function create_DatatableTOtalStudentTradeWiseValidationAndPrintPdf(name) {
+    return $(name).DataTable({
+      dom: 'Bfrtip',
+      buttons: [{
+          extend: 'print',
+          text: 'Print all',
+          exportOptions: {
+            columns: [0,1, 2, 3, 4, 5, 6]
+          }
+        },
+        {
+          extend: 'print',
+          text: 'Print selected',
+          exportOptions: {
+            columns: ':visible:not(.not-exported)',
+            columns: [0,1, 2, 3, 4, 5, 6],
+            modifier: {
+              selected: true
+            }
+          }
+        },
+        {
+          extend: 'pdf',
+          text: 'Save As PDF',
+          title: 'All_Selected_Student_PDF_List.',
+          exportOptions: {
+            columns: ':visible:not(.not-exported)',
+            columns: [0,1, 2, 3, 4, 5, 6],
+            modifier: {
+              selected: true
+            }
+          }
+        }
+      ],
+      select: {
+        style: 'multi'
+      },
+      "scrollX": true,
+      scrollCollapse: true,
+      "autoWidth": true
+    });
+    // $('.dt-button').addClass('btn btn-primary');
+  }
+</script>

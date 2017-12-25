@@ -1,0 +1,175 @@
+<style>
+  .modal-body{
+    padding: 0px !important;
+    font-size: 11px !important
+  }
+  .myResumeNavbar {
+    background-color: #4267a3!important;
+    color: #fff;
+    padding: 5px!important;
+  }
+
+  .imgResume {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    display: block;
+    text-align: middle;
+    background-color: #fff;
+    color: #fff;
+  }
+
+  .navResume {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    background-color: #4267a3!important;
+  }
+
+  .resumeTable th,
+  td {
+    /*border: 1px solid black;*/
+    border-collapse: collapse;
+  }
+
+  .resumeTable th,
+  td {
+    /*padding: 5px;*/
+    text-align: left;
+  }
+  .resumeTableTop th, td {
+    text-align: center !important;
+  }
+    .resumeTable > th >a{
+      font-size: 15px !important;
+    }
+.page-header{
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+}
+img
+{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto auto;
+}
+</style>
+<div class="container-fluid">
+  <div class="row no-margin">
+    <nav class="col-sm-4 col-md-4 col-lg-4 col-xl-4 myResumeNavbar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-header navResume DivCen">
+          <div class="DivCen width100">
+                <img alt="image" class="imgResume" src="../img/student.png">
+              </div>
+          <span class="clear DivCen">
+              <span class="resumeName"><strong class="font-bold"></strong>
+              </span>
+          </span>
+        </li>
+      </ul>
+      <table style="width:100%;margin-top: 10px;" class="resumeTable resumeTableTop">
+        <tr>
+          <th>Father</th>
+          <td class="resumeFather"></td>
+        </tr>
+        <tr>
+          <th>Mother</th>
+          <td class="resumeMother"></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td class="resumeAddress"></td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td class="resumeCity"></td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td class="resumeState"></td>
+        </tr>
+        <tr>
+          <th>Pincode</th>
+          <td class="resumePincode"></td>
+        </tr>
+        <tr>
+          <th>Mobile</th>
+          <td class="resumeMobile"></td>
+        </tr>
+        <tr>
+          <th>Birth Date</th>
+          <td class="resumeDob"></td>
+        </tr>
+        <tr>
+          <th>Email ID</th>
+          <td class="resumeEmail"></td>
+        </tr>
+      </table>
+    </nav>
+    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xs-8 mainDiv">
+      <div id="page-header" class="page-header">Education and Experience</div>
+      <div class="myCard">
+        <div class="row no-margin no-padding">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 iti-Padding5">
+            <div class="iti-DivBod iti-Padding10 iti-DivCen iti-DivCenD">
+              <img class="img-rounded borderImage" src="../img/education.jpg" alt="education image" width="65" height="65">
+              <table style="width:100%;margin-top: 10px;" class="resumeTable">
+                <tr>
+                  <th title="Name of College">College</th>
+                  <td class="resumeCollege"></td>
+                </tr>
+                <tr>
+                  <th title="Name of Trade">Trade</th>
+                  <td class="resumeTrade"></td>
+                </tr>
+                <tr>
+                  <th title="Passout Year">Passout</th>
+                  <td class="resumePOY"></td>
+                </tr>
+                <tr>
+                  <th title="Percentage">Percentage</th>
+                  <td class="resumePer"></td>
+                </tr>
+                <tr>
+                  <th title="High School Percentage">High School(%)</th>
+                  <td class="resumeHSPer"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 iti-Padding5">
+            <div class="iti-DivBod iti-Padding10 iti-DivCen iti-DivCenD">
+              <img class="img-rounded borderImage" src="../img/Company1.jpg" alt="Company image" width="65" height="65">
+              <table style="width:100%;margin-top: 10px;" class="resumeTable">
+                <tr>
+                  <th>Experience</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td class="resumeStatus"></td>
+                </tr>
+                <tr>
+                  <th>Present Company</th>
+                  <td class="resumeCompany"></td>
+                </tr>
+                <tr>
+                  <th title="Total Year of Experience">Experience in Year</th>
+                  <td class="resumeYOE"></td>
+                </tr>
+                <tr>
+                  <th>Willing to job</th>
+                  <td class="resumeJob"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
